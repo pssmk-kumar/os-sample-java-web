@@ -3,25 +3,15 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git(url: 'https://github.com/santosh52krishna/os-sample-java-web.git', branch: 'master', credentialsId: 'santosh52krishna')
+        git(url: 'https://github.com/santosh52krishna/os-sample-java-web.git', branch: 'master')
       }
     }
-    
-     stage ('Initialize') {
-            steps {
-                sh '''
-                    export PATH=/home/ubuntu/apache-maven-3.5.3/bin
-                    export M2_HOME=/home/ubuntu/apache-maven-3.5.3
-                '''
-            }
-        }
     
     stage('Build') {
       steps {
         echo 'build'
         sh '''mvn clean -Dmaven.test.failure.ignore=true install
-
-echo "test build"'''
+		echo "test build"'''
       }
     }
     stage('Test') {
