@@ -12,8 +12,8 @@
 
   <distributionManagement>
     <repository>
-      <id>central</id>
-      <url>http://192.168.1.53:8082/artifactory/valstechRepo/</url>
+      <id>valstechRepoLocal</id>
+      <url>http://192.168.1.53:8082/artifactory/valstechRepoLocal/</url>
     </repository>
   </distributionManagement>
 
